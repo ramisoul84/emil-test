@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      width: 100%;
+}
+
+img,
+video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}

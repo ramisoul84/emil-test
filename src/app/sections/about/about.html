@@ -1,0 +1,8 @@
+<section id="about">
+    <div class="videos-container">
+        @for (src of videoSources; track $index) {
+            <video #aboutVideos [src]="src" muted loop playsinline preload="metadata" controls>
+            </video>
+        }
+    </div>
+</section>
