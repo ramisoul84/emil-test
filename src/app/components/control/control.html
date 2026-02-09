@@ -1,0 +1,55 @@
+<div class="control">
+    <button class="hide" (click)="toggleExpand()">
+        {{ isExpanded ? 'Hide' : 'Show' }}
+    </button>
+    <div class="controls">
+        <div class="hint">
+            Blob Customizing
+        </div>
+        <div class="range-wrapper">
+            <div class="range-group">
+                <input class="range" type="range" id="speed" [value]="params().speed" min="0.20" max="1.50" step="0.05"
+                    (input)="onSpeedChange($event)" aria-label="Animation speed">
+                <div class="range-label">SPEED</div>
+            </div>
+
+            <div class="range-group">
+                <input class="range" type="range" id="wobble" [value]="params().wobble" min="0.50" max="2.00"
+                    step="0.01" (input)="onWobbleChange($event)" aria-label="Wobble amount" />
+                <div class="range-label">WOBBLE</div>
+            </div>
+
+            <div class="range-group">
+                <input class="range" type="range" id="intensity" [value]="params().intensity" min="0.50" max="2.00"
+                    step="0.01" (input)="onIntensityChange($event)" aria-label="Blob intensity" />
+                <div class="range-label">INTENSITY</div>
+            </div>
+
+            <div class="range-group">
+                <input class="range" type="range" id="radius" [value]="params().radius" min="0.10" max="0.20"
+                    step="0.01" (input)="onRadiusChange($event)" aria-label="Blob radius" />
+                <div class="range-label">RADIUS</div>
+            </div>
+        </div>
+        <button class="randomize" (click)="randomizeShape()">Randomize</button>
+        <div class="colors">
+            <div class="color-btn color-1" (click)="openColorPicker(colorInput1)">
+                <div class="selected-color" [style.background-color]="color1"></div>
+                <input #colorInput1 type="color" [value]="color1" (input)="onColorChange('color1', $event)"
+                    style="display: none;">
+            </div>
+
+            <div class="color-btn color-2" (click)="openColorPicker(colorInput2)">
+                <div class="selected-color" [style.background-color]="color2"></div>
+                <input #colorInput2 type="color" [value]="color2" (input)="onColorChange('color2', $event)"
+                    style="display: none;">
+            </div>
+
+            <div class="color-btn color-3" (click)="openColorPicker(colorInput3)">
+                <div class="selected-color" [style.background-color]="color3"></div>
+                <input #colorInput3 type="color" [value]="color3" (input)="onColorChange('color3', $event)"
+                    style="display: none;">
+            </div>
+        </div>
+    </div>
+</div>

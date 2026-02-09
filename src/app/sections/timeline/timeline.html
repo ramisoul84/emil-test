@@ -1,0 +1,70 @@
+<section id="timeline">
+  <h2>Timeline Animation</h2>
+  
+  <!-- Timeline Animation -->
+  <div class="animation-container">
+    <div class="animation-wrapper">
+      @if (timelineOptions) {
+        <ng-lottie 
+          [options]="timelineOptions" 
+          (animationCreated)="onTimelineCreated($event)" 
+          class="lottie-animation" />
+      } @else {
+        <div class="loading-placeholder">
+          <div class="spinner"></div>
+          <p>Loading timeline animation...</p>
+        </div>
+      }
+    </div>
+    
+    <div class="animation-controls">
+      <button (click)="playTimeline()">Play</button>
+      <button (click)="pauseTimeline()">Pause</button>
+      <button (click)="stopTimeline()">Stop</button>
+      <button (click)="restartTimeline()">Restart</button>
+    </div>
+    
+    <div class="cache-status">
+      <span [class.cached]="timelineLoaded" [class.not-cached]="!timelineLoaded">
+        {{ timelineLoaded ? '✓ Loaded from cache' : '⏳ Loading from network' }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Map Animation -->
+  <div class="animation-container">
+    <h3>Map Animation</h3>
+    
+    <div class="animation-wrapper">
+      @if (mapOptions) {
+        <ng-lottie 
+          [options]="mapOptions" 
+          (animationCreated)="onMapCreated($event)" 
+          class="lottie-animation" />
+      } @else {
+        <div class="loading-placeholder">
+          <div class="spinner"></div>
+          <p>Loading map animation...</p>
+        </div>
+      }
+    </div>
+    
+    <div class="animation-controls">
+      <button (click)="playMap()">Play</button>
+      <button (click)="pauseMap()">Pause</button>
+      <button (click)="stopMap()">Stop</button>
+    </div>
+    
+    <div class="cache-status">
+      <span [class.cached]="mapLoaded" [class.not-cached]="!mapLoaded">
+        {{ mapLoaded ? '✓ Loaded from cache' : '⏳ Loading from network' }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Debug Controls -->
+  <div class="debug-controls">
+    <button (click)="verifyCache()">Check Cache Status</button>
+    <button (click)="reloadFromCache()">Reload from Cache</button>
+  </div>
+</section>

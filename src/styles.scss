@@ -1,20 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+@font-face {
+    font-family: "lcd_solidregular";
+    src: url("assets/fonts/lcdsolid/lcdsolid-vpzb-webfont.woff2") format("woff2"),
+        url("assets/fonts/lcdsolid/lcdsolid-vpzb-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* colors */
+    --color-bg: #030a16;
+    --color1: #226b22;
+    --color2: #ACC424;
+    --color3: #FF2D95;
+    --title-bg: linear-gradient(135deg, var(--color1), var(--color2));
+
+    /* grid */
+    --grid-stroke-color: rgba(196, 202, 196, 0.1);
+    --grid-stroke-width: 1px;
+
+    /* fonts family */
+    --font-main: "League Spartan", sans-serif;
+    --font-title: "lcd_solidregular", sans-serif;
+
+    /* fonts size */
+    --size-title: 1rem;
+    --size-text: 1rem;
+    --spacing: 1.5rem;
+
+    @media (min-width: 576px) {}
+
+    @media (min-width: 1200px) {}
+
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0 var(--margin);
+    background-color: var(--color-bg);
+    font-family: var(--font-main);
+    color: white;
+}
 
 section {
+    padding: 0 var(--grid-size);
+    margin-bottom: calc(4 * var(--grid-size));
+}
+
+.title {
     display: flex;
     align-items: center;
     justify-content: center;
-      width: 100%;
+    height: calc(2 * var(--grid-size));
+    margin-bottom: var(--grid-size);
+    background: var(--title-bg);
+    user-select: none;
+    color: white;
+    font-size: var(--size-title);
+    font-family: var(--font-title);
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 img,
 video {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    object-fit: contain;
+    display: block;
+}
+
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color2);
+    background-clip: padding-box;
+    border: 3px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color1);
+    background-clip: padding-box;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--color-bg);
+}
+
+
+@media (min-width:1200px) {
+    section {
+        padding: 0 calc(8 * var(--grid-size))
+    }
+}
+
+@media (min-width:1600px) {
+    section {
+        padding: 0 calc(13 * var(--grid-size))
+    }
+}
+
+@media (min-width:2200px) {
+    section {
+        padding: 0 calc(18 * var(--grid-size))
+    }
 }

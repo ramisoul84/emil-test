@@ -1,0 +1,24 @@
+<div class="contact-container">
+  <h1>Contact Us</h1>
+  
+  <div class="video-grid">
+    @for (video of videos; track video.id) {
+    <div class="video-wrapper">
+      <video
+        [id]="video.id"
+        [autoplay]="video.autoplay"
+        [loop]="video.loop"
+        [muted]="video.muted"
+        [playsInline]="video.playsInline"
+        preload="auto"
+        class="contact-video">
+        <!-- Fallback message -->
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-label">{{ video.id }}</div>
+    </div>
+    }
+  </div>
+  
+
+</div>

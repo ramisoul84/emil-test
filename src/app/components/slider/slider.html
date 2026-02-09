@@ -1,0 +1,27 @@
+<div class="slider-container" #sliderContainer>
+  <div class="slides-wrapper">
+    @for (asset of assets; track $index; let i = $index) {
+    <div class="slide" [class.active]="i === currentIndex" [attr.data-index]="i">
+
+      @if (asset.type == 'img') {
+      <div class="image-container">
+        <img [src]="asset.src" alt="img" loading="lazy">
+      </div>
+      }
+
+      @else if (asset.type == 'video') {
+      <div class="video-container">
+        <video [src]="asset.src" [attr.data-index]="i" #videoPlayer autoplay loop>
+          <p>Your browser doesn't support HTML5 video.</p>
+        </video>
+      </div>
+      }
+      @else if (asset.type == 'json') {
+      <div class="lottie-container" [attr.data-index]="i">
+         <ng-lottie [options]="options"  />
+      </div>
+      }
+    </div>
+    }
+  </div>
+</div>

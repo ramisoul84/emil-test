@@ -1,0 +1,43 @@
+<section id="cases">
+    <div class="title cases-title">cases.</div>
+    <div class="navigation">
+        <button class="nav-arrow prev" (click)="prevSlide()" [disabled]="isAnimating">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+        </button>
+
+        <button class="nav-arrow next" (click)="nextSlide()" [disabled]="isAnimating">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="cases">
+        @for (case of cases; track $index; let i = $index) {
+        <div #caseEl class="case" [class.active]="i === currentIndex" [attr.data-index]="i">
+            <div class="slider-wrapper" #sliderWrapper>
+                <app-slider [assets]="case.assets" [currentIndex]="0"/>
+            </div>
+            <div class="case-info" #caseInfo>
+                <div class="info-content">
+                    <div class="info-title" #title>{{case.title | translate}}</div>
+                    <div class="text" #text [innerHTML]="case.text | translate"></div>
+                    <div class="tags" #tags>{{case.tags}}</div>
+                </div>
+
+                <div class="youtube">{{case.youtube}}</div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <div class="indicators">
+        @for (case of cases; track $index; let i = $index) {
+        <button class="indicator" [class.active]="i === currentIndex" (click)="goToSlide(i)">
+            <div class="indicator-progress"></div>
+        </button>
+        }
+    </div>
+</section>

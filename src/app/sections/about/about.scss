@@ -1,13 +1,152 @@
-#about{
-    .videos-container{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 1rem;
+#about {
+    .about {
+        display: flex;
+        flex-direction: column;
+        color: black;
 
-        video{
-            width: 260px;
-            border: 2px solid black;
-            filter: grayscale(1);
+        .about-left {
+            .about-emil-img {
+                margin-bottom: var(--grid-size);
+                position: relative;
+
+                .about-video {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        .about-right {
+            background-color: white;
+            color: black;
+
+            @media (min-width:1200px) {
+                display: none;
+            }
+
+            .about-imgs {
+                display: grid;
+                grid-template-columns: repeat(3, calc(7 * var(--grid-size)));
+                grid-template-rows: repeat(2, calc(5 * var(--grid-size)));
+                gap: var(--grid-size);
+                padding: var(--grid-size);
+
+                .img-wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                }
+
+                .img-active {
+                    grid-column: span 2 / span 2;
+                    grid-row: span 2 / span 2;
+                }
+
+                .img-small1 {
+                    grid-column-start: 3;
+                    grid-row-start: 1;
+                    filter: grayscale(1);
+                    cursor: pointer;
+                }
+
+                .img-small2 {
+                    grid-column-start: 3;
+                    grid-row-start: 2;
+                    filter: grayscale(1);
+                    cursor: pointer;
+                }
+
+            }
+
+            .about-info {
+                padding: var(--grid-size);
+
+                .about-info-title {
+                    font-family: var(--font-title);
+                    font-size: var(--size-title);
+                    margin-bottom: var(--grid-size);
+                    line-height: var(--grid-size);
+                }
+
+                .about-info-text {
+                    line-height: calc(2 * var(--grid-size));
+                    font-size: var(--size-text);
+                }
+            }
+        }
+
+        .about-right-desktop {
+            display: none;
+        }
+    }
+}
+
+@media (min-width:1200px) {
+    #about {
+        .about {
+            flex-direction: row;
+
+            .about-left {
+                .about-title {
+                    width: calc(16 * var(--grid-size));
+                }
+
+                .about-emil-img {
+                    width: calc(16 * var(--grid-size));
+                    margin-bottom: 0;
+                }
+
+                margin-right: var(--grid-size);
+            }
+
+            .about-right-desktop {
+                display: flex;
+                background-color: white;
+                height: calc(19 * var(--grid-size));
+
+                .about-imgs {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: var(--grid-size);
+
+                    .img-wrapper-desktop {
+                        width: calc(7 * var(--grid-size));
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: none;
+                        overflow: hidden;
+                        cursor: pointer;
+                        filter: grayscale(1);
+
+                        &:hover img {
+                            transform: scale(1.1);
+                        }
+                    }
+
+                    .active {
+                        filter: grayscale(0);
+                    }
+                }
+
+                .about-info {
+                    padding: var(--grid-size);
+
+                    .about-info-title {
+                        font-family: var(--font-title);
+                        font-size: var(--size-title);
+                        margin-bottom: var(--grid-size);
+                    }
+
+                    .about-info-text {
+                        font-size: var(--size-text);
+                        line-height: var(--spacing);
+                    }
+                }
+            }
         }
     }
 }

@@ -29,6 +29,10 @@
     "@angular/forms": "^21.1.0",
     "@angular/platform-browser": "^21.1.0",
     "@angular/router": "^21.1.0",
+    "@ngx-translate/core": "^17.0.0",
+    "gsap": "^3.14.2",
+    "lottie-web": "^5.13.0",
+    "ngx-lottie": "^21.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

@@ -1,3 +1,35 @@
 <section id="home">
-    HOME
+  <div class="blob-wrapper">
+    <app-blob />
+  </div>
+
+  <div class="home">
+    <app-control [isLoaded]="isLoaded" class="control" />
+  </div>
 </section>
+
+<!--
+
+  <section class="home">
+    <app-control [isLoaded]="isLoaded" class="control" />
+  </section>
+<section id="home">
+  <div class="home">
+    <div class="blob-wrapper">
+      <app-blob />
+    </div>
+
+
+    <app-control [isLoaded]="isLoaded" class="control" />
+  </div>
+</section>
+  <div>
+    <div class="text-rotator" [class.animate]="isLoaded">
+      <span class="text-item">ARCHITECTURE, EXPANDED</span>
+    </div>
+    <app-control [isLoaded]="isLoaded" class="control" />
+  </div>
+
+    <span class="text-item">DIGITAL EXPERIENCES,<br>SYSTEMS, AND INTERFACES</span>
+    <span class="text-item">STORIES TOLD THROUGH<br>SPACE, AND MOTION.</span>
+-->

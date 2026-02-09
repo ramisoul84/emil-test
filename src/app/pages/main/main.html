@@ -1,2 +1,56 @@
-<app-home />
-<app-about />
+@if (isLoading) {
+<div class="loading">
+    <div class="site-logo">
+        <img src="assets/logos/logo.png" alt="site logo">
+    </div>
+
+    <div class="progress-percentage">{{ progress }}%</div>
+
+    <div class="progress-container">
+        <div class="progress-track">
+            <div class="progress-bar" [style.width.%]="progress"></div>
+        </div>
+    </div>
+</div>
+}
+
+@if (!isLoading) {
+<div class="main">
+    <app-header [isLoaded]="true" />
+    <app-home [isLoaded]="true" />
+    <app-about />
+    <app-cases />
+    <app-solidarity />
+    <app-contact />
+</div>
+}
+<!--
+@if (false) {
+<div class="loading">
+    <div class="site-logo">
+        <img src="assets/logos/logo.png" alt="site logo">
+    </div>
+
+    <div class="progress-percentage">{{ progress }}%</div>
+
+    <div class="progress-container">
+        <div class="progress-track">
+            <div class="progress-bar" [style.width.%]="progress"></div>
+        </div>
+    </div>
+</div>
+}
+
+@if (!isLoading) {
+
+<div class="main-wrapper">
+    <app-header [isLoaded]="true" />
+
+    <main class="main-content" [class.visible]="!isLoading">
+        <app-home [isLoaded]="true" />
+        <app-about />
+    </main>
+</div>
+}
+
+-->

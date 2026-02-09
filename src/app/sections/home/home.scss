@@ -1,0 +1,247 @@
+#home {
+    height: calc(round(calc(100vh / var(--grid-size))) * var(--grid-size));
+    position: relative;
+
+
+    .blob-wrapper {
+        position: absolute;
+        top: calc(6 * var(--grid-size));
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .home {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .control {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    }
+}
+
+/*
+
+#home {
+    height: calc(round(calc(100vh / var(--grid-size))) * var(--grid-size));
+
+    background-color: tomato;
+
+    .blob-wrapper{
+        position: absolute;
+        top: calc(6 * var(--grid-size));
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .home {
+        width: 100%;
+        height: 100%;
+        background-color: tomato;
+
+
+        .control {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    }
+
+
+
+}
+
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(round(calc(100vh / var(--grid-size))) * var(--grid-size));
+    position: relative;
+    background-color: tomato;
+    width: 100%;
+
+    .text-rotator {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        color: white;
+        font-size: 2rem;
+        font-family: var(--font-title);
+        opacity: 0;
+
+        &.animate {
+            opacity: 1;
+            transition: opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s;
+        }
+
+        .text-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            text-align: center;
+            height: 40%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 1;
+
+            &:nth-child(1) {
+                //animation: textSequence1 7.5s infinite;
+                animation-delay: 0
+            }
+
+            &:nth-child(2) {
+                animation: textSequence1 7.5s infinite;
+                animation-delay: 3.5s;
+            }
+
+            &:nth-child(3) {
+                animation: textSequence3 7.5s infinite;
+                animation-delay: 6s;
+            }
+        }
+    }
+
+    .control{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+}
+
+@keyframes textSequence1 {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+// Second text animation
+@keyframes textSequence2 {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+        // Fade out
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+// Third text animation
+@keyframes textSequence3 {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        // 0.5s blink
+        opacity: 1;
+    }
+
+    50% {
+        // Stay solid for 2s
+        opacity: 1;
+    }
+
+    60% {
+        // Fade out
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+ .text-rotator {
+        position: relative;
+        display: inline-block;
+        min-height: 3.2em; // Adjust based on your line-height (2 lines × 1.6em)
+        //opacity: 0;
+        transform: translateY(20px);
+        background-color: red;
+
+        // Animation starts when parent has .animate class
+        &.animate {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s;
+        }
+
+        .text-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            line-height: 1.6em;
+
+            // Specific animation for each text item
+            &:nth-child(1) {
+                // First text: blink for 0.5s, stay solid for 2s
+                animation: textSequence1 7.5s infinite paused;
+
+                .animate & {
+                    animation-play-state: running;
+                    animation-delay: 1s; // Start 1s after container appears (0.5s container delay + 0.5s)
+                }
+            }
+
+            &:nth-child(2) {
+                // Second text: blink for 0.5s, stay solid for 2s
+                animation: textSequence2 7.5s infinite paused;
+
+                .animate & {
+                    animation-play-state: running;
+                    animation-delay: 4s; // Start after first text completes
+                }
+            }
+
+            &:nth-child(3) {
+                // Third text: blink for 0.5s, stay solid for 2s
+                animation: textSequence3 7.5s infinite paused;
+
+                .animate & {
+                    animation-play-state: running;
+                    animation-delay: 7s; // Start after second text completes
+                }
+            }
+        }
+    }
+
+*/
